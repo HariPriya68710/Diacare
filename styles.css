@@ -1,0 +1,136 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #f9f9fc;
+}
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background-color: white;
+}
+
+nav h1 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+}
+
+/* Buttons */
+.buttons button {
+    margin-left: 10px;
+    padding: 8px 16px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.sign-in {
+    background-color: transparent;
+    border: 1px solid black;
+}
+
+.sign-up {
+    background-color: black;
+    color: white;
+}
+
+/* Hero Section */
+.hero {
+    padding: 60px 20px;
+    background: url('background-image.jpg') no-repeat center center/cover;
+    color: black;
+}
+
+.hero h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.hero button {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.patient {
+    background-color: #d99ff6;
+    color: white;
+}
+
+.doctor {
+    background-color: #a54ab3;
+    color: white;
+}
+
+/* What We Do Section */
+.about {
+    background-color: #eae0ff;
+    padding: 30px;
+    margin: 40px 10%;
+    border-radius: 8px;
+}
+
+/* FAQ Section */
+.faq {
+    text-align: left;
+    padding: 20px 10%;
+}
+
+.faq h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.faq ul {
+    list-style: none;
+    padding: 0;
+}
+
+.faq ul li {
+    padding: 8px;
+    border-bottom: 1px solid lightgray;
+}
+
+/* Footer */
+footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 10%;
+    background-color: black;
+    color: white;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer ul li {
+    padding: 5px 0;
+}

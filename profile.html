@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DiaCare - Login</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background-image: url('background-image.png');  /* Keep this */
+            background-size: cover;  /* Added to make image cover full background */
+            background-position: center;  /* Center the background image */
+            background-repeat: no-repeat;  /* Prevent image from repeating */
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        .background-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .shape {
+            position: absolute;
+            background: linear-gradient(135deg, #9d4edd33, #7b2cbf33);
+            border-radius: 50%;
+        }
+
+        .shape:nth-child(1) {
+            width: 200px;
+            height: 200px;
+            top: -50px;
+            left: -50px;
+        }
+
+        .shape:nth-child(2) {
+            width: 150px;
+            height: 150px;
+            bottom: 50px;
+            right: -30px;
+        }
+
+        .login-container {
+            width:450px;
+            height: 500px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            display: flex;
+            position: relative;
+            z-index: 1;
+            margin-right: 90px;
+            
+        }
+
+        .login-form {
+            flex: 1;
+            padding: 3rem;
+            background: rgba(157, 78, 221, 0.1);
+            border-radius: 20px;  /* Updated to make all corners rounded */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .login-form h2 {
+            color: #9d4edd;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #666;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid rgba(157, 78, 221, 0.3);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.9);
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus {
+            border-color: #9d4edd;
+        }
+
+        .login-btn {
+            background: linear-gradient(135deg, #9d4edd, #7b2cbf);
+            color: white;
+            padding: 1rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+        }
+
+        .login-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .forgot-password {
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .forgot-password a {
+            color: #9d4edd;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding-right: 0;  /* Remove padding on mobile */
+                justify-content: center;  /* Center on mobile */
+            }
+            
+            .login-container {
+                width: 95%;
+                height: auto;
+                margin: 20px;
+            }
+
+            .login-form {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body >
+    <div class="background-shapes">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    
+    <div class="login-container">
+        <div class="login-form">
+            <h2>DiaCare</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                
+                <button type="submit" class="login-btn">Sign In</button>
+                
+                <div class="forgot-password">
+                    <a href="#">Forgot Password?</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            // Add your login logic here
+            console.log('Login attempt:', { username, password });
+            
+            // Example validation
+            if (username && password) {
+                // Show loading state
+                const button = document.querySelector('.login-btn');
+                button.textContent = 'Signing in...';
+                button.disabled = true;
+                
+                // Simulate API call
+                setTimeout(() => {
+                    button.textContent = 'Sign In';
+                    button.disabled = false;
+                    // Add your authentication logic here
+                }, 1500);
+            }
+        });
+
+        // Add floating animation to background shapes
+        const shapes = document.querySelectorAll('.shape');
+        shapes.forEach((shape, index) => {
+            const animation = shape.animate([
+                { transform: 'translateY(0px)' },
+                { transform: 'translateY(20px)' },
+                { transform: 'translateY(0px)' }
+            ], {
+                duration: 3000 + (index * 500),
+                iterations: Infinity,
+                easing: 'ease-in-out'
+            });
+        });
+    </script>
+</body>
+</html>

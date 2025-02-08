@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DiaCare AI - Your AI Companion for Diabetes Care</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            background-color: white;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .auth-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .auth-buttons button {
+            padding: 0.5rem 1rem;
+            border: 1px solid #9d4edd;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        .login {
+            background: transparent;
+            color: #9d4edd;
+            text-decoration: none;
+        }
+
+        .signup {
+            background: #9d4edd;
+            color: white;
+        }
+
+        .hero {
+            padding: 4rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .hero-content {
+            flex: 1;
+        }
+
+        .hero-image {
+            flex: 1;
+            text-align: right;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 25px;
+            background: linear-gradient(135deg, #9d4edd, #7b2cbf);
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #9d4edd, #7b2cbf);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            width:90%;
+            height:80%;
+        }
+
+        .faq {
+            padding: 2rem 5%;
+        }
+
+        .faq h2 {
+            margin-bottom: 1.5rem;
+        }
+
+        .faq-item {
+            background: white;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        a{
+            text-decoration: none;
+        }
+
+        .footer {
+            background: #333;
+            color: white;
+            padding: 2rem 5%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            margin-right: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About Us</a>
+            <a href="#contact">Contact Us</a>
+        </div>
+        <div class="auth-buttons">
+            <button class="login"><a href="profile.html">Login</a></button>
+            <button class="signup">Sign Up</button>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <div class="hero-content">
+            <h1>DIACARE-AI</h1>
+            <p class="subtitle">SMART. SIMPLE. PERSONALIZED—<br>YOUR AI COMPANION FOR DIABETES CARE</p>
+            <div class="cta-buttons" style="display: flex-col;">
+                <button class="cta-button">Sign in as Patient</button>
+                <button class="cta-button">Sign in as Doctor</button>
+            </div>
+        </div>
+        <div class="hero-image">
+            <!-- DNA helix and pill images would go here -->
+        </div>
+    </div>
+    <div style="width:100%; display: flex-col; justify-items:center;height: 25vh;">
+    <div class="info-box">
+        <h3>What we do?</h3>
+        <p>Managing diabetes shouldn't be complicated! DiaCare AI uses the power of artificial intelligence to provide personalized support, smart insights, and comprehensive tools - helping you stay in control of your health effectively.</p>
+    </div>
+    </div>
+
+    <div class="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-items">
+            <div class="faq-item">What does ApiFix do?</div>
+            <div class="faq-item">How does ApiFix do what they do?</div>
+            <div class="faq-item">Who should choose ApiFix?</div>
+            <div class="faq-item">How should I make payment?</div>
+            <div class="faq-item">How will this be beneficial?</div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="social-links">
+            <h4>Reach us here!</h4>
+            <a href="#">Instagram</a>
+            <a href="#">LinkedIn</a>
+            <a href="#">Twitter</a>
+        </div>
+        <div class="footer-links">
+            <h4>DiaCare-AI</h4>
+            <a href="#">About Us</a>
+            <a href="#">Blogs</a>
+            <a href="#">Contact</a>
+        </div>
+    </footer>
+
+    <script>
+        // Add click event listeners to FAQ items
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.addEventListener('click', () => {
+                // Toggle active class for accordion effect
+                item.classList.toggle('active');
+            });
+        });
+
+        // Add smooth scroll behavior for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
